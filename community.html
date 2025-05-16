@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluora - Community Engagement</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --oxblood: #800020;
+            --green: #006400;
+            --light-gold: #F7EFD2;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--oxblood);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        .cta-button {
+            background-color: var(--oxblood);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-gray);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Language Dropdown */
+        .language-dropdown {
+            padding: 8px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .language-dropdown:focus,
+        .language-dropdown:hover {
+            border-color: var(--gold);
+            background-color: white;
+            outline: none;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--oxblood);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Project Suggestion Section */
+        .project-suggestion {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .project-form {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .project-form h3 {
+            font-size: 24px;
+            color: var(--oxblood);
+            margin-bottom: 20px;
+        }
+
+        .project-form input,
+        .project-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .project-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .project-form button {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .project-form button:hover {
+            background-color: var(--oxblood);
+            color: white;
+        }
+
+        /* Project Voting Section */
+        .project-voting {
+            padding: 80px 0;
+            background-color: var(--light-gold);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            color: var(--oxblood);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .vote-count {
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+        }
+
+        .vote-button {
+            background-color: var(--gold);
+            color: var(--dark-gray);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .vote-button:hover {
+            background-color: var(--oxblood);
+            color: white;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-post {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            color: var(--oxblood);
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .blog-content a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .blog-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Issues Section */
+        .issues-section {
+            padding: 80px 0;
+            background-color: var(--light-gold);
+        }
+
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .issue-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .issue-card h3 {
+            font-size: 20px;
+            color: var(--oxblood);
+            margin-bottom: 10px;
+        }
+
+        .issue-card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .issue-status {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .issue-status.resolved {
+            color: var(--gold);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .testimonial-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            animation: fadeEffect 1.5s;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .testimonial-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #666;
+        }
+
+        .testimonial-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+
+        .active-dot {
+            background-color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .footer-logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #ddd;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 70px;
+                background-color: white;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .language-dropdown {
+                width: 90%;
+                margin: 15px auto;
+                padding: 12px;
+            }
+
+            .project-form {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .section-title p {
+                font-size: 16px;
+            }
+
+            .project-form h3 {
+                font-size: 20px;
+            }
+
+            .blog-content h3,
+            .issue-card h3,
+            .project-card h3 {
+                font-size: 18px;
+            }
+
+            .testimonial-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="oluora.png" alt="Oluora Logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="#">Track Reports</a></li>
+                    <li><a href="report_issue.html" class="cta-button">Report Issue</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <select class="language-dropdown" onchange="changeLanguage(this.value)">
+                <option value="english">en</option>
+                <option value="igbo">Igbo</option>
+                <option value="pidgin">Pidgin</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Project Suggestion Section -->
+    <section class="project-suggestion">
+        <div class="container">
+            <div class="section-title">
+                <h2>Suggest a Community Project</h2>
+                <p>Have an idea to improve Abia State? Submit your project proposal and let the community vote!</p>
+            </div>
+            <div class="project-form">
+                <h3>Submit Your Project Idea</h3>
+                <input type="text" placeholder="Project Title" required>
+                <textarea placeholder="Describe your project in detail..." required></textarea>
+                <input type="text" placeholder="Your Name (Optional)">
+                <button type="submit">Submit Project</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Voting Section -->
+    <section class="project-voting">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vote on Community Projects</h2>
+                <p>Support the projects you believe will make a difference in Abia State.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Renovation of Umuahia Market</h3>
+                    <p>Proposed upgrade to modernize the market with better stalls and sanitation facilities.</p>
+                    <div class="vote-count">Votes: 245</div>
+                    <button class="vote-button">Vote</button>
+                </div>
+                <div class="project-card">
+                    <h3>Solar Streetlights in Aba</h3>
+                    <p>Install solar-powered streetlights to improve safety and visibility at night.</p>
+                    <div class="vote-count">Votes: 182</div>
+                    <button class="vote-button">Vote</button>
+                </div>
+                <div class="project-card">
+                    <h3>Youth Skill Acquisition Center</h3>
+                    <p>Create a center to train youths in tech and vocational skills for employment.</p>
+                    <div class="vote-count">Votes: 310</div>
+                    <button class="vote-button">Vote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Abia State Updates</h2>
+                <p>Stay informed with the latest news and issues in Abia State, sourced from X and our community.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <img src="road-construction.jpg" alt="Road Construction">
+                    <div class="blog-content">
+                        <h3>Road Repairs Begin in Aba</h3>
+                        <p>Following reports on X about poor road conditions, the state government has started repairs on major roads in Aba, improving transport.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <img src="flood.jpg" alt="Flooding Issue">
+                    <div class="blog-content">
+                        <h3>Flooding Concerns in Umuahia</h3>
+                        <p>Residents on X highlighted flooding issues in Umuahia. The government is now planning drainage improvements.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <img src="healthcare.jpg" alt="Healthcare Initiative">
+                    <div class="blog-content">
+                        <h3>New Health Centers Planned</h3>
+                        <p>Posts on X revealed a need for better healthcare access. The state has announced plans for new health centers in rural areas.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Issues Section -->
+    <section class="issues-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Public & Resolved Issues</h2>
+                <p>Track ongoing and resolved issues reported by the Abia State community.</p>
+            </div>
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <h3>Power Outages in Aba</h3>
+                    <p>Frequent power outages reported in Aba affecting businesses and residents.</p>
+                    <div class="issue-status">Status: In Progress</div>
+                </div>
+                <div class="issue-card">
+                    <h3>Collapsed Bridge in Ohafia</h3>
+                    <p>A bridge collapse was reported, and repairs were completed within two weeks.</p>
+                    <div class="issue-status resolved">Status: Resolved</div>
+                </div>
+                <div class="issue-card">
+                    <h3>Water Supply Issues in Umuahia</h3>
+                    <p>Lack of clean water reported in several neighborhoods, under review.</p>
+                    <div class="issue-status">Status: In Progress</div>
+                </div>
+                <div class="issue-card">
+                    <h3>Waste Management in Aba</h3>
+                    <p>Trash collection issues resolved with new waste management trucks deployed.</p>
+                    <div class="issue-status resolved">Status: Resolved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Community Voices</h2>
+                <p>Hear from citizens who are making a difference through Oluora.</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>"I suggested a project for a new community library, and the votes from the community pushed it to the top. Oluora makes our voices count!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="abia_woman.jpeg" alt="Testimonial Author">
+                        <div class="author-info">
+                            <h4>Ngozi Eze</h4>
+                            <p>Teacher, Aba</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"The blog keeps me updated on issues in Abia State, and I love that I can vote on projects that matter to my community."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="abia_man.jpeg" alt="Testimonial Author">
+                        <div class="author-info">
+                            <h4>Chinedu Okoro</h4>
+                            <p>Business Owner, Umuahia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Seeing resolved issues like the waste management problem in my area gives me hope. Oluora is changing Abia for the better."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="abia-man.jpeg" alt="Testimonial Author">
+                        <div class="author-info">
+                            <h4>Emeka Nwankwo</h4>
+                            <p>Student, Aba</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="dot active-dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-text">Oluora</div>
+                    </div>
+                    <p>Bridging the gap between citizens and government with real-time, verified communication.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="#">Track Reports</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:support@oluora.com">support@oluora.com</a></li>
+                        <li><a href="tel:+234123456789">+234 123 456 789</a></li>
+                        <li><a href="#">Abia State, Nigeria</a></li>
+                        <li><a href="#">Mon - Fri: 9AM - 5PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Oluora. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('toggle');
+        });
+
+        // Testimonial Slider
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("testimonial-slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].className = slides[i].className.replace(" active", "");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+
+            slides[slideIndex - 1].className += " active";
+            dots[slideIndex - 1].className += " active-dot";
+        }
+
+        // Auto-slide testimonials
+        setInterval(() => {
+            slideIndex++;
+            showSlides(slideIndex);
+        }, 15000);
+
+        // Language Selection
+        function changeLanguage(lang) {
+            alert(`Language switched to ${lang}`);
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Project Voting (Placeholder)
+        document.querySelectorAll('.vote-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const voteCount = button.previousElementSibling;
+                let votes = parseInt(voteCount.textContent.split(': ')[1]);
+                voteCount.textContent = `Votes: ${++votes}`;
+                alert('Thank you for voting!');
+            });
+        });
+
+        // Project Form Submission (Placeholder)
+        document.querySelector('.project-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Project submitted successfully!');
+            e.target.reset();
+        });
+    </script>
+</body>
+
+</html>

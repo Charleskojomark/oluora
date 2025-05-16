@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluora - Abia State Data Analytics</title>
+    <style>
+        :root { --gold: #D4AF37; --oxblood: #800020; --green: #006400; --light-gray: #f5f5f5; --dark-gray: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--dark-gray); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 15px 0; }
+        .logo { display: flex; align-items: center; }
+        .logo-text::before { content: '\f0a1'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 30px; color: var(--oxblood); margin-right: 10px; }
+        .logo-text { font-size: 24px; font-weight: 700; color: var(--oxblood); }
+        .logo-text span { color: var(--gold); }
+        .abia-analytics { padding: 60px 0; }
+        .abia-analytics h1 { font-size: 32px; color: var(--oxblood); margin-bottom: 20px; }
+        .filters { margin-bottom: 20px; }
+        .filters select { padding: 8px; border-radius: 5px; border: 1px solid #ddd; }
+        .posts { max-height: 400px; overflow-y: auto; margin-bottom: 20px; }
+        .post { padding: 15px; background-color: white; margin-bottom: 10px; border-radius: 5px; }
+        .post a { color: var(--green); text-decoration: none; }
+        .post a:hover { text-decoration: underline; }
+        .stats { margin-bottom: 20px; }
+        .stats p { font-size: 18px; margin: 5px 0; }
+        canvas { max-width: 100%; }
+        footer { background-color: var(--dark-gray); color: white; padding: 60px 0 20px; text-align: center; }
+        .footer-bottom p { font-size: 14px; color: #ddd; }
+        @media (max-width: 768px) { .abia-analytics { padding: 40px 0; } }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">Olu<span>ora</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="abia-analytics">
+        <div class="container">
+            <h1>Abia State Live Data Analytics</h1>
+            <div class="filters">
+                <select id="filter-date" onchange="filterPosts()">
+                    <option value="all">All Dates</option>
+                    <option value="2025-05-14">May 14, 2025</option>
+                    <option value="2025-05-07">May 7, 2025</option>
+                    <option value="2025-05-06">May 6, 2025</option>
+                </select>
+            </div>
+            <div class="stats">
+                <p>Total Posts: <span id="total-posts">3</span></p>
+                <p>Posts Today: <span id="posts-today">1</span></p>
+            </div>
+            <div class="posts" id="abia-posts">
+                <!-- Posts will be populated by JavaScript -->
+            </div>
+            <canvas id="post-chart" width="400" height="200"></canvas>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2025 Oluora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mock data for Abia State X posts (replace with X API call)
+        const mockPosts = [
+            { username: "MobilePunch", text: "Abia State governor Alex Otti announces employment for 19 top digital training graduates.", time: "01:51 2025-05-14", link: "https://t.co/wMiHcajQxb", sentiment: "positive" },
+            { username: "NigeriaStories", text: "Obasanjo commissions new 30 MVA substation in Abia state.", time: "14:03 2025-05-06", link: "https://t.co/LtDX3MkMsU", sentiment: "positive" },
+            { username: "myabiadaily", text: "Abia State Govt. takes over Aba Mega Mall.", time: "00:11 2025-05-07", link: "https://t.co/MlJFjAnpOM", sentiment: "neutral" }
+        ];
+
+        const postsContainer = document.getElementById('abia-posts');
+        const totalPosts = document.getElementById('total-posts');
+        const postsToday = document.getElementById('posts-today');
+        const ctx = document.getElementById('post-chart').getContext('2d');
+
+        function displayPosts(posts) {
+            postsContainer.innerHTML = '';
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `<strong>${post.username}</strong> - ${post.text} <br><small>${post.time} - <a href="${post.link}" target="_blank">Link</a> (Sentiment: ${post.sentiment})</small>`;
+                postsContainer.appendChild(postElement);
+            });
+            totalPosts.textContent = posts.length;
+            postsToday.textContent = posts.filter(p => p.time.includes('2025-05-15')).length;
+        }
+
+        function filterPosts() {
+            const filterDate = document.getElementById('filter-date').value;
+            let filteredPosts = mockPosts;
+            if (filterDate !== 'all') {
+                filteredPosts = mockPosts.filter(post => post.time.includes(filterDate));
+            }
+            displayPosts(filteredPosts);
+            updateChart(filteredPosts);
+        }
+
+        function updateChart(posts) {
+            const dates = [...new Set(posts.map(p => p.time.split(' ')[0]))];
+            const counts = dates.map(date => posts.filter(p => p.time.split(' ')[0] === date).length);
+            new Chart(ctx, {
+                type: 'bar',
+                data: { labels: dates, datasets: [{ label: 'Posts', data: counts, backgroundColor: 'rgba(128, 0, 32, 0.5)' }] },
+                options: { scales: { y: { beginAtZero: true } } }
+            });
+        }
+
+        // Initial display
+        displayPosts(mockPosts);
+        updateChart(mockPosts);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
