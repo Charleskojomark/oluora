@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oluora - Bridging Citizens and Government</title>
+    <title data-translate="title">Oluora - Bridging Citizens and Government</title>
     <style>
         :root {
             --gold: #D4AF37;
@@ -176,7 +176,6 @@
             }
         }
 
-        /* Pause ticker on hover */
         .ticker-section:hover .ticker-container {
             animation-play-state: paused;
         }
@@ -198,17 +197,14 @@
         }
 
         .toll-free p {
-            
             font-size: 16px;
             color: var(--oxblood);
             font-weight: 500;
             text-align: center;
         }
 
-        .toll-free h1 {
-            font-size: 24px;
+        .toll-free p[data-translate="toll-free-number"] {
             color: var(--gold);
-            font-weight: 700;
         }
 
         /* Hero Section */
@@ -219,7 +215,6 @@
             align-items: center;
             color: white;
             text-align: center;
-            /* margin-top: 30px; */
         }
 
         .hero-content {
@@ -648,16 +643,17 @@
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
-            .nav-container .logo img{
+            .nav-container .logo img {
                 height: 40px;
             }
-            
-            .nav-container{
+
+            .nav-container {
                 height: 70px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -700,14 +696,6 @@
             .toll-free {
                 flex-wrap: wrap;
                 padding: 8px 15px;
-            }
-
-            .toll-free h1 {
-                font-size: 20px;
-            }
-
-            .toll-free p {
-                font-size: 14px;
             }
 
             .steps {
@@ -754,14 +742,6 @@
                 padding: 0 15px;
             }
 
-            .toll-free h1 {
-                font-size: 18px;
-            }
-
-            .toll-free p {
-                font-size: 12px;
-            }
-
             .testimonial-content p {
                 font-size: 16px;
             }
@@ -775,16 +755,16 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <img src="oluora.png" alt="">
+                <img src="oluora.png" alt="Oluora Logo">
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="community.html">Community</a></li>
-                    <li><a href="">Track Reports</a></li>
-                    <li><a href="report_issue.html" class="cta-button">Report Issue</a></li>
+                    <li><a href="index.html" data-translate="nav-home">Home</a></li>
+                    <li><a href="#features" data-translate="nav-features">Features</a></li>
+                    <li><a href="#how-it-works" data-translate="nav-how-it-works">How It Works</a></li>
+                    <li><a href="community.html" data-translate="nav-community">Community</a></li>
+                    <li><a href="#" data-translate="nav-track-reports">Track Reports</a></li>
+                    <li><a href="report_issue.html" class="cta-button" data-translate="nav-report-issue">Report Issue</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu">
@@ -793,7 +773,7 @@
                 <div></div>
             </div>
             <select class="language-dropdown" onchange="changeLanguage(this.value)">
-                <option value="english">en</option>
+                <option value="english">English</option>
                 <option value="igbo">Igbo</option>
                 <option value="pidgin">Pidgin</option>
             </select>
@@ -816,16 +796,16 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Bridging Citizens and Government</h1>
-                <p>Real-time, verified communication that empowers both sides for a better society</p>
+                <h1 data-translate="hero-title">Bridging Citizens and Government</h1>
+                <p data-translate="hero-subtitle">Real-time, verified communication that empowers both sides for a better society</p>
                 <div class="hero-buttons">
-                    <a href="report_issue.html" class="primary-btn">Report an Issue</a>
-                    <a href="login.html" class="secondary-btn">Suggest a Project</a>
+                    <a href="report_issue.html" class="primary-btn" data-translate="hero-report-issue">Report an Issue</a>
+                    <a href="login.html" class="secondary-btn" data-translate="hero-suggest-project">Suggest a Project</a>
                 </div>
                 <div class="toll-free">
-                    <p>Call</p>
-                    <p style="color: #D4AF37;">070364858763</p>
-                    <p>to report for free</p>
+                    <p data-translate="toll-free-call">Call</p>
+                    <p data-translate="toll-free-number">070364858763</p>
+                    <p data-translate="toll-free-report">to report for free</p>
                 </div>
             </div>
         </div>
@@ -835,51 +815,51 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Key Features</h2>
-                <p>Oluora provides powerful tools to connect citizens with government agencies effectively</p>
+                <h2 data-translate="features-title">Key Features</h2>
+                <p data-translate="features-subtitle">Oluora provides powerful tools to connect citizens with government agencies effectively</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Multilingual Interface</h3>
-                    <p>Access the platform in English, Igbo, or Pidgin to ensure inclusivity for all citizens</p>
+                    <h3 data-translate="feature-multilingual-title">Multilingual Interface</h3>
+                    <p data-translate="feature-multilingual-desc">Access the platform in English, Igbo, or Pidgin to ensure inclusivity for all citizens</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Secure Evidence-Based Reporting</h3>
-                    <p>Submit photos, videos, or voice notes to report sensitive issues anonymously with complete privacy protection.</p>
+                    <h3 data-translate="feature-secure-title">Secure Evidence-Based Reporting</h3>
+                    <p data-translate="feature-secure-desc">Submit photos, videos, or voice notes to report sensitive issues anonymously with complete privacy protection.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-hashtag"></i>
                     </div>
-                    <h3>Social Media Integration</h3>
-                    <p>Send reports or project suggestions via DM on our social media accounts, or stay informed with live updates from X about Abia State, its people, and government.</p>
+                    <h3 data-translate="feature-social-title">Social Media Integration</h3>
+                    <p data-translate="feature-social-desc">Send reports or project suggestions via DM on our social media accounts, or stay informed with live updates from X about Abia State, its people, and government.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Geolocation Support</h3>
-                    <p>Automatically tag your location for accurate reporting and faster response</p>
+                    <h3 data-translate="feature-geolocation-title">Geolocation Support</h3>
+                    <p data-translate="feature-geolocation-desc">Automatically tag your location for accurate reporting and faster response</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <h3>Inclusive Access</h3>
-                    <p>Toll-free number available for those with limited internet access</p>
+                    <h3 data-translate="feature-access-title">Inclusive Access</h3>
+                    <p data-translate="feature-access-desc">Toll-free number available for those with limited internet access</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Analytics & Tracking</h3>
-                    <p>Track report status and view analytics on government response times</p>
+                    <h3 data-translate="feature-analytics-title">Analytics & Tracking</h3>
+                    <p data-translate="feature-analytics-desc">Track report status and view analytics on government response times</p>
                 </div>
             </div>
         </div>
@@ -889,34 +869,34 @@
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-title">
-                <h2>How It Works</h2>
-                <p>Oluora makes citizen-government communication simple and effective</p>
+                <h2 data-translate="how-it-works-title">How It Works</h2>
+                <p data-translate="how-it-works-subtitle">Oluora makes citizen-government communication simple and effective</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Register</h3>
-                    <p>Create an account or continue anonymously</p>
+                    <h3 data-translate="step-register-title">Register</h3>
+                    <p data-translate="step-register-desc">Create an account or continue anonymously</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Submit Report</h3>
-                    <p>Describe your issue with supporting evidence</p>
+                    <h3 data-translate="step-submit-title">Submit Report</h3>
+                    <p data-translate="step-submit-desc">Describe your issue with supporting evidence</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>AI Processing</h3>
-                    <p>Our AI categorizes and routes your report</p>
+                    <h3 data-translate="step-ai-title">AI Processing</h3>
+                    <p data-translate="step-ai-desc">Our AI categorizes and routes your report</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Government Review</h3>
-                    <p>Government takes appropriate action</p>
+                    <h3 data-translate="step-government-title">Government Review</h3>
+                    <p data-translate="step-government-desc">Government takes appropriate action</p>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
-                    <h3>Track Progress</h3>
-                    <p>Monitor status and provide feedback</p>
+                    <h3 data-translate="step-track-title">Track Progress</h3>
+                    <p data-translate="step-track-desc">Monitor status and provide feedback</p>
                 </div>
             </div>
         </div>
@@ -926,17 +906,14 @@
     <section class="ai-features" id="ai-features">
         <div class="container">
             <div class="section-title">
-                <h2>Our Intelligent AI Solutions</h2>
-                <p>Our advanced AI systems ensure efficient processing and handling of all citizen reports</p>
+                <h2 data-translate="ai-features-title">Our Intelligent AI Solutions</h2>
+                <p data-translate="ai-features-subtitle">Our advanced AI systems ensure efficient processing and handling of all citizen reports</p>
             </div>
             <div class="ai-feature">
                 <div class="ai-feature-text">
-                    <h3>AI-Powered Report Categorization</h3>
-                    <p>Our intelligent system automatically analyzes and categorizes your reports, ensuring they reach
-                        the right government department without delay. The AI identifies key issues, priority levels,
-                        and required action based on the content of your submission.</p>
-                    <p>Reports are instantly routed to one of 23 ministries including Health, Education, Transport, and
-                        more - eliminating bureaucratic delays and confusion about where to direct your concerns.</p>
+                    <h3 data-translate="ai-categorization-title">AI-Powered Report Categorization</h3>
+                    <p data-translate="ai-categorization-desc1">Our intelligent system automatically analyzes and categorizes your reports, ensuring they reach the right government department without delay. The AI identifies key issues, priority levels, and required action based on the content of your submission.</p>
+                    <p data-translate="ai-categorization-desc2">Reports are instantly routed to one of 23 ministries including Health, Education, Transport, and more - eliminating bureaucratic delays and confusion about where to direct your concerns.</p>
                 </div>
                 <div class="ai-feature-image">
                     <img src="trend.jpg" alt="AI Categorization Visualization">
@@ -944,12 +921,9 @@
             </div>
             <div class="ai-feature">
                 <div class="ai-feature-text">
-                    <h3>Spam Filtering & Report Verification</h3>
-                    <p>Advanced AI filtering, combined with screening by trained human personnel, ensures only
-                        legitimate reports reach government officials, preventing system abuse while maintaining open
-                        communication channels for all citizens.</p>
-                    <p>Our content verification system, supported by trained staff, analyzes submitted evidence for
-                        authenticity, helping prioritize genuine issues that require immediate attention.</p>
+                    <h3 data-translate="ai-spam-title">Spam Filtering & Report Verification</h3>
+                    <p data-translate="ai-spam-desc1">Advanced AI filtering, combined with screening by trained human personnel, ensures only legitimate reports reach government officials, preventing system abuse while maintaining open communication channels for all citizens.</p>
+                    <p data-translate="ai-spam-desc2">Our content verification system, supported by trained staff, analyzes submitted evidence for authenticity, helping prioritize genuine issues that require immediate attention.</p>
                 </div>
                 <div class="ai-feature-image">
                     <img src="spam-detect.jpg" alt="Content Verification System">
@@ -957,11 +931,9 @@
             </div>
             <div class="ai-feature">
                 <div class="ai-feature-text">
-                    <h3>Report Analysis & Trend Detection</h3>
-                    <p>Our AI analyzes patterns across thousands of reports to identify emerging trends and urgent
-                        community needs, enabling proactive government response before issues escalate.</p>
-                    <p>Sentiment analysis helps gauge public satisfaction with government services and response times,
-                        creating accountability and transparency in governance.</p>
+                    <h3 data-translate="ai-trend-title">Report Analysis & Trend Detection</h3>
+                    <p data-translate="ai-trend-desc1">Our AI analyzes patterns across thousands of reports to identify emerging trends and urgent community needs, enabling proactive government response before issues escalate.</p>
+                    <p data-translate="ai-trend-desc2">Sentiment analysis helps gauge public satisfaction with government services and response times, creating accountability and transparency in governance.</p>
                 </div>
                 <div class="ai-feature-image">
                     <img src="ai-trend.jpg" alt="Trend Analysis Dashboard">
@@ -974,50 +946,43 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>Hear from citizens and government officials who have experienced the impact of Oluora</p>
+                <h2 data-translate="testimonials-title">Success Stories</h2>
+                <p data-translate="testimonials-subtitle">Hear from citizens and government officials who have experienced the impact of Oluora</p>
             </div>
             <div class="testimonial-container">
                 <div class="testimonial-slide active">
                     <div class="testimonial-content">
-                        <p>"After reporting the collapsed bridge in our community through Oluora, we received a response
-                            within 24 hours. Within a week, repairs had begun. The transparency and accountability this
-                            platform provides is truly revolutionary."</p>
+                        <p data-translate="testimonial-1">"After reporting the collapsed bridge in our community through Oluora, we received a response within 24 hours. Within a week, repairs had begun. The transparency and accountability this platform provides is truly revolutionary."</p>
                     </div>
                     <div class="testimonial-author">
                         <img src="abia_woman.jpeg" alt="Testimonial Author">
                         <div class="author-info">
                             <h4>Chioma Nwosu</h4>
-                            <p>Community Leader, Umuahia</p>
+                            <p data-translate="testimonial-1-author">Community Leader, Umuahia</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"As a ministry official, Oluora has transformed how we receive and process citizen reports.
-                            The AI categorization ensures we get relevant issues immediately, and the evidence
-                            submission feature helps us assess situations accurately even before sending teams to
-                            investigate."</p>
+                        <p data-translate="testimonial-2">"As a ministry official, Oluora has transformed how we receive and process citizen reports. The AI categorization ensures we get relevant issues immediately, and the evidence submission feature helps us assess situations accurately even before sending teams to investigate."</p>
                     </div>
                     <div class="testimonial-author">
                         <img src="abia_man.jpeg" alt="Testimonial Author">
                         <div class="author-info">
                             <h4>Dr. Emmanuel Okafor</h4>
-                            <p>Ministry of Health</p>
+                            <p data-translate="testimonial-2-author">Ministry of Health</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"Living abroad, I've always felt disconnected from local issues in my hometown. Oluora allows
-                            me to stay informed and contribute to community development even from thousands of miles
-                            away. The platform's multilingual support makes it accessible to everyone."</p>
+                        <p data-translate="testimonial-3">"Living abroad, I've always felt disconnected from local issues in my hometown. Oluora allows me to stay informed and contribute to community development even from thousands of miles away. The platform's multilingual support makes it accessible to everyone."</p>
                     </div>
                     <div class="testimonial-author">
                         <img src="abia-man.jpeg" alt="Testimonial Author">
                         <div class="author-info">
                             <h4>Ikenna Obi</h4>
-                            <p>Diaspora Community Member</p>
+                            <p data-translate="testimonial-3-author">Diaspora Community Member</p>
                         </div>
                     </div>
                 </div>
@@ -1034,16 +999,15 @@
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Make Your Voice Heard?</h2>
-                <p>Join thousands of citizens who are making a difference in their communities through Oluora. Download
-                    the app or sign up for early access.</p>
+                <h2 data-translate="cta-title">Ready to Make Your Voice Heard?</h2>
+                <p data-translate="cta-subtitle">Join thousands of citizens who are making a difference in their communities through Oluora. Download the app or sign up for early access.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="primary-btn"><i class="fab fa-google-play"></i> Google Play</a>
-                    <a href="#" class="primary-btn"><i class="fab fa-apple"></i> App Store</a>
+                    <a href="#" class="primary-btn"><i class="fab fa-google-play"></i> <span data-translate="cta-google">Google Play</span></a>
+                    <a href="#" class="primary-btn"><i class="fab fa-apple"></i> <span data-translate="cta-apple">App Store</span></a>
                 </div>
                 <div class="cta-form">
-                    <input type="email" placeholder="Enter your email for early access">
-                    <button type="submit">Get Access</button>
+                    <input type="email" placeholder="Enter your email for early access" data-translate-placeholder="cta-email-placeholder">
+                    <button type="submit" data-translate="cta-button">Get Access</button>
                 </div>
             </div>
         </div>
@@ -1057,8 +1021,7 @@
                     <div class="footer-logo">
                         <div class="footer-logo-text">Oluora</div>
                     </div>
-                    <p>Bridging the gap between citizens and government with real-time, verified communication that
-                        empowers both sides.</p>
+                    <p data-translate="footer-description">Bridging the gap between citizens and government with real-time, verified communication that empowers both sides.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1067,42 +1030,324 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate="footer-quick-links">Quick Links</h3>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#ai-features">Community</a></li>
-                        <li><a href="#testimonials">Track Reports</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#features" data-translate="nav-features">Features</a></li>
+                        <li><a href="#how-it-works" data-translate="nav-how-it-works">How It Works</a></li>
+                        <li><a href="#ai-features" data-translate="nav-community">Community</a></li>
+                        <li><a href="#testimonials" data-translate="nav-track-reports">Track Reports</a></li>
+                        <li><a href="#contact" data-translate="footer-contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Resources</h3>
+                    <h3 data-translate="footer-resources">Resources</h3>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Support Center</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" data-translate="footer-faq">FAQ</a></li>
+                        <li><a href="#" data-translate="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="footer-terms">Terms of Service</a></li>
+                        <li><a href="#" data-translate="footer-support">Support Center</a></li>
+                        <li><a href="#" data-translate="footer-blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Info</h3>
+                    <h3 data-translate="footer-contact-info">Contact Info</h3>
                     <ul>
                         <li><a href="mailto:support@oluora.com">support@oluora.com</a></li>
                         <li><a href="tel:+234123456789">+234 123 456 789</a></li>
-                        <li><a href="#">Abia State, Nigeria</a></li>
-                        <li><a href="#">Mon - Fri: 9AM - 5PM</a></li>
+                        <li><a href="#" data-translate="footer-address">Abia State, Nigeria</a></li>
+                        <li><a href="#" data-translate="footer-hours">Mon - Fri: 9AM - 5PM</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Oluora. All rights reserved.</p>
+                <p data-translate="footer-copyright">© 2025 Oluora. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Language Translations
+        const translations = {
+            english: {
+                title: "Oluora - Bridging Citizens and Government",
+                "nav-home": "Home",
+                "nav-features": "Features",
+                "nav-how-it-works": "How It Works",
+                "nav-community": "Community",
+                "nav-track-reports": "Track Reports",
+                "nav-report-issue": "Report Issue",
+                "hero-title": "Bridging Citizens and Government",
+                "hero-subtitle": "Real-time, verified communication that empowers both sides for a better society",
+                "hero-report-issue": "Report an Issue",
+                "hero-suggest-project": "Suggest a Project",
+                "toll-free-call": "Call",
+                "toll-free-number": "070364858763",
+                "toll-free-report": "to report for free",
+                "features-title": "Key Features",
+                "features-subtitle": "Oluora provides powerful tools to connect citizens with government agencies effectively",
+                "feature-multilingual-title": "Multilingual Interface",
+                "feature-multilingual-desc": "Access the platform in English, Igbo, or Pidgin to ensure inclusivity for all citizens",
+                "feature-secure-title": "Secure Evidence-Based Reporting",
+                "feature-secure-desc": "Submit photos, videos, or voice notes to report sensitive issues anonymously with complete privacy protection.",
+                "feature-social-title": "Social Media Integration",
+                "feature-social-desc": "Send reports or project suggestions via DM on our social media accounts, or stay informed with live updates from X about Abia State, its people, and government.",
+                "feature-geolocation-title": "Geolocation Support",
+                "feature-geolocation-desc": "Automatically tag your location for accurate reporting and faster response",
+                "feature-access-title": "Inclusive Access",
+                "feature-access-desc": "Toll-free number available for those with limited internet access",
+                "feature-analytics-title": "Analytics & Tracking",
+                "feature-analytics-desc": "Track report status and view analytics on government response times",
+                "how-it-works-title": "How It Works",
+                "how-it-works-subtitle": "Oluora makes citizen-government communication simple and effective",
+                "step-register-title": "Register",
+                "step-register-desc": "Create an account or continue anonymously",
+                "step-submit-title": "Submit Report",
+                "step-submit-desc": "Describe your issue with supporting evidence",
+                "step-ai-title": "AI Processing",
+                "step-ai-desc": "Our AI categorizes and routes your report",
+                "step-government-title": "Government Review",
+                "step-government-desc": "Government takes appropriate action",
+                "step-track-title": "Track Progress",
+                "step-track-desc": "Monitor status and provide feedback",
+                "ai-features-title": "Our Intelligent AI Solutions",
+                "ai-features-subtitle": "Our advanced AI systems ensure efficient processing and handling of all citizen reports",
+                "ai-categorization-title": "AI-Powered Report Categorization",
+                "ai-categorization-desc1": "Our intelligent system automatically analyzes and categorizes your reports, ensuring they reach the right government department without delay. The AI identifies key issues, priority levels, and required action based on the content of your submission.",
+                "ai-categorization-desc2": "Reports are instantly routed to one of 23 ministries including Health, Education, Transport, and more - eliminating bureaucratic delays and confusion about where to direct your concerns.",
+                "ai-spam-title": "Spam Filtering & Report Verification",
+                "ai-spam-desc1": "Advanced AI filtering, combined with screening by trained human personnel, ensures only legitimate reports reach government officials, preventing system abuse while maintaining open communication channels for all citizens.",
+                "ai-spam-desc2": "Our content verification system, supported by trained staff, analyzes submitted evidence for authenticity, helping prioritize genuine issues that require immediate attention.",
+                "ai-trend-title": "Report Analysis & Trend Detection",
+                "ai-trend-desc1": "Our AI analyzes patterns across thousands of reports to identify emerging trends and urgent community needs, enabling proactive government response before issues escalate.",
+                "ai-trend-desc2": "Sentiment analysis helps gauge public satisfaction with government services and response times, creating accountability and transparency in governance.",
+                "testimonials-title": "Success Stories",
+                "testimonials-subtitle": "Hear from citizens and government officials who have experienced the impact of Oluora",
+                "testimonial-1": "After reporting the collapsed bridge in our community through Oluora, we received a response within 24 hours. Within a week, repairs had begun. The transparency and accountability this platform provides is truly revolutionary.",
+                "testimonial-1-author": "Community Leader, Umuahia",
+                "testimonial-2": "As a ministry official, Oluora has transformed how we receive and process citizen reports. The AI categorization ensures we get relevant issues immediately, and the evidence submission feature helps us assess situations accurately even before sending teams to investigate.",
+                "testimonial-2-author": "Ministry of Health",
+                "testimonial-3": "Living abroad, I've always felt disconnected from local issues in my hometown. Oluora allows me to stay informed and contribute to community development even from thousands of miles away. The platform's multilingual support makes it accessible to everyone.",
+                "testimonial-3-author": "Diaspora Community Member",
+                "cta-title": "Ready to Make Your Voice Heard?",
+                "cta-subtitle": "Join thousands of citizens who are making a difference in their communities through Oluora. Download the app or sign up for early access.",
+                "cta-google": "Google Play",
+                "cta-apple": "App Store",
+                "cta-email-placeholder": "Enter your email for early access",
+                "cta-button": "Get Access",
+                "footer-description": "Bridging the gap between citizens and government with real-time, verified communication that empowers both sides.",
+                "footer-quick-links": "Quick Links",
+                "footer-resources": "Resources",
+                "footer-contact-info": "Contact Info",
+                "footer-faq": "FAQ",
+                "footer-privacy": "Privacy Policy",
+                "footer-terms": "Terms of Service",
+                "footer-support": "Support Center",
+                "footer-blog": "Blog",
+                "footer-contact": "Contact Us",
+                "footer-address": "Abia State, Nigeria",
+                "footer-hours": "Mon - Fri: 9AM - 5PM",
+                "footer-copyright": "© 2025 Oluora. All rights reserved."
+            },
+            igbo: {
+                title: "Oluora - Ijikọta Ụmụ Amaala na Ọchịchị",
+                "nav-home": "Ụlọ",
+                "nav-features": "Njirimara",
+                "nav-how-it-works": "Ka Ọ Si Arụ Ọrụ",
+                "nav-community": "Obodo",
+                "nav-track-reports": "Soro Akụkọ",
+                "nav-report-issue": "Kọwaa Nsogbu",
+                "hero-title": "Ijikọta Ụmụ Amaala na Ọchịchị",
+                "hero-subtitle": "Nkwukọrịta n'ezie na nke enwetara nkwado nke na-enye aka n'ịkwalite ọha mmadụ",
+                "hero-report-issue": "Kọwaa Nsogbu",
+                "hero-suggest-project": "Tụọ Ajo Ọrụ",
+                "toll-free-call": "Kpoo",
+                "toll-free-number": "070364858763",
+                "toll-free-report": "ịkọ akụkọ n'efu",
+                "features-title": "Njirimara Ndị bụ Isi",
+                "features-subtitle": "Oluora na-enye ngwaọrụ siri ike iji jikọta ụmụ amaala na ụlọ ọrụ gọọmentị nke ọma",
+                "feature-multilingual-title": "Interface dị n'ọtụtụ Asụsụ",
+                "feature-multilingual-desc": "Nweta ikpo okwu n'asụsụ Bekee, Igbo, ma ọ bụ Pidgin iji hụ na onye ọ bụla nwere ohere",
+                "feature-secure-title": "Mkpesa Dabere na Ihe akaebe Nchedo",
+                "feature-secure-desc": "Nyefee foto, vidiyo, ma ọ bụ ndetu olu iji kọwaa nsogbu dị nchebe na-enweghị aha na nchedo zuru oke.",
+                "feature-social-title": "Njikọta Mgbasa Ozi Ọha",
+                "feature-social-desc": "Zipu akụkọ ma ọ bụ ntụnye ọrụ site na DM na akaụntụ mgbasa ozi anyị, ma ọ bụ nọgide na-amata na mmelite ozugbo site na X gbasara Abia Steeti, ndị ya, na gọọmentị.",
+                "feature-geolocation-title": "Nkwado Geolocation",
+                "feature-geolocation-desc": "Tinye ebe gị ozugbo maka mkpesa ziri ezi na nzaghachi ngwa ngwa",
+                "feature-access-title": "Ohere Gụnyere",
+                "feature-access-desc": "Nọmba efu dị maka ndị nwere ohere ịntanetị dị ntakịrị",
+                "feature-analytics-title": "Nchọpụta & Nsuso",
+                "feature-analytics-desc": "Soro ọnọdụ akụkọ ma lee anya na nchọpụta na oge nzaghachi gọọmentị",
+                "how-it-works-title": "Ka Ọ Si Arụ Ọrụ",
+                "how-it-works-subtitle": "Oluora na-eme ka nkwukọrịta ụmụ amaala na gọọmentị dị mfe ma dị irè",
+                "step-register-title": "Debanye Aha",
+                "step-register-desc": "Mepụta akaụntụ ma ọ bụ gaa n'ihu na-enweghị aha",
+                "step-submit-title": "Nyefee Akụkọ",
+                "step-submit-desc": "Kọwaa nsogbu gị na ihe akaebe na-akwado",
+                "step-ai-title": "Nhazi AI",
+                "step-ai-desc": "AI anyị na-ahazi ma na-ebuga akụkọ gị",
+                "step-government-title": "Nlebanya Gọọmentị",
+                "step-government-desc": "Gọọmentị na-eme ihe kwesịrị ekwesị",
+                "step-track-title": "Soro Ọganihu",
+                "step-track-desc": "Lelee ọnọdụ ma nye nzaghachi",
+                "ai-features-title": "Ngwọta AI anyị nwere Ọgụgụ Isi",
+                "ai-features-subtitle": "Sistemu AI anyị dị elu na-ahụ na nhazi na njikwa akụkọ ụmụ amaala dị mma",
+                "ai-categorization-title": "Nhazi Akụkọ na-eji AI",
+                "ai-categorization-desc1": "Sistemu anyị nwere ọgụgụ isi na-enyocha ma na-ahazi akụkọ gị ozugbo, na-ahụ na ha ruru ngalaba gọọmentị ziri ezi na-enweghị oge ọ bụla. AI na-achọpụta isi nsogbu, ọkwa mkpa, na ihe achọrọ dabere na ọdịnaya nke ntinye gị.",
+                "ai-categorization-desc2": "A na-ebuga akụkọ ozugbo na otu n'ime ministri 23 gụnyere Ahụike, Agụmakwụkwọ, Ụgbọ njem, na ndị ọzọ - na-ewepụ oge nke bureaucracy na mgbagwoju anya banyere ebe a ga-eduzi nchegbu gị.",
+                "ai-spam-title": "Nchọpụta Spam & Nkwenye Akụkọ",
+                "ai-spam-desc1": "Nchọpụta AI dị elu, jikọtara ya na nyocha site n'aka ndị ọrụ a zụrụ azụ, na-ahụ na naanị akụkọ ziri ezi ruru ndị ọrụ gọọmentị, na-egbochi mmejọ sistemụ ka ọ na-ejigide ọwa nkwukọrịta mepere emepe maka ụmụ amaala niile.",
+                "ai-spam-desc2": "Sistemu nkwenye ọdịnaya anyị, nke ndị ọrụ a zụrụ azụ na-akwado, na-enyocha ihe akaebe enyere maka izi ezi, na-enyere aka ịhọpụta nsogbu ziri ezi nke chọrọ nlebara anya ozugbo.",
+                "ai-trend-title": "Nchọpụta Akụkọ & Nchọpụta Usoro",
+                "ai-trend-desc1": "AI anyị na-enyocha usoro n'ofe puku akụkọ iji chọpụta usoro na-apụta na mkpa obodo dị ngwa, na-enyere aka nzaghachi gọọmentị tupu nsogbu akalite.",
+                "ai-trend-desc2": "Nchọpụta mmetụta na-enyere aka ịtụle afọ ojuju ọha na eze na ọrụ gọọmentị na oge nzaghachi, na-emepụta nghọta na nghọta na ọchịchị.",
+                "testimonials-title": "Akụkọ Ọganiihu",
+                "testimonials-subtitle": "Nụrụ site n'aka ụmụ amaala na ndị ọrụ gọọmentị ndị nwetara mmetụta Oluora",
+                "testimonial-1": "Mgbe m kọchara akwa mmiri dara ada n'obodo anyị site na Oluora, anyị natara nzaghachi n'ime awa 24. N'ime otu izu, nrụzi amalitela. Nghọta na nghọta nke ikpo okwu a na-enye bụ ihe mgbanwe n'ezie.",
+                "testimonial-1-author": "Onye Ndụ Obodo, Umuahia",
+                "testimonial-2": "Dị ka onye ọrụ ministri, Oluora agbanweela ka anyị si anata ma hazie akụkọ ụmụ amaala. Nhazi AI na-ahụ na anyị na-enweta nsogbu dị mkpa ozugbo, na njirimara ntinye ihe akaebe na-enyere anyị aka ịtụle ọnọdụ nke ọma tupu izipu ndị otu iji nyochaa.",
+                "testimonial-2-author": "Ministri Ahụike",
+                "testimonial-3": "Ibi n'ala ọzọ, enwere m mmetụta na m kewapụrụ na nsogbu mpaghara n'obodo m. Oluora na-enye m ohere ịnọgide na-amata ma nye aka na mmepe obodo ọbụlagodi site na puku kilomita. Nkwado asụsụ ọtụtụ nke ikpo okwu na-eme ka onye ọ bụla nwee ike iji ya.",
+                "testimonial-3-author": "Onye Òtù Mba Ọzọ",
+                "cta-title": "Ị dị njikere ikwu okwu gị?",
+                "cta-subtitle": "Soro puku ụmụ amaala ndị na-eme mgbanwe n'obodo ha site na Oluora. Budata ngwa ma ọ bụ debanye aha maka ohere mbụ.",
+                "cta-google": "Google Play",
+                "cta-apple": "Ụlọ Ahịa Ngwa",
+                "cta-email-placeholder": "Tinye email gị maka ohere mbụ",
+                "cta-button": "Nweta Ohere",
+                "footer-description": "Ijikọta oghere dị n'etiti ụmụ amaala na gọọmentị na nkwukọrịta n'ezie, nke enwetara nkwado nke na-enye aka n'akụkụ abụọ.",
+                "footer-quick-links": "Njikọ Ngwa ngwa",
+                "footer-resources": "Ihe onwunwe",
+                "footer-contact-info": "Ozi Kọntaktị",
+                "footer-faq": "Ajụjụ Ndị A Na-ajụkarị",
+                "footer-privacy": "Amụma Nzuzo",
+                "footer-terms": "Usoro Ọrụ",
+                "footer-support": "Ebe Nkwado",
+                "footer-blog": "Blọọgụ",
+                "footer-contact": "Kpọtụrụ Anyị",
+                "footer-address": "Abia Steeti, Nigeria",
+                "footer-hours": "Mọn - Fraị: 9AM - 5PM",
+                "footer-copyright": "© 2025 Oluora. Ihe niile edere."
+            },
+            pidgin: {
+                title: "Oluora - Dey Join Citizens wit Government",
+                "nav-home": "House",
+                "nav-features": "Tins Wey E Get",
+                "nav-how-it-works": "How E Dey Work",
+                "nav-community": "Community",
+                "nav-track-reports": "Follow Reports",
+                "nav-report-issue": "Report Problem",
+                "hero-title": "Dey Join Citizens wit Government",
+                "hero-subtitle": "Real-time, confam talk wey dey give power to both sides for better society",
+                "hero-report-issue": "Report Problem",
+                "hero-suggest-project": "Suggest Project",
+                "toll-free-call": "Call",
+                "toll-free-number": "070364858763",
+                "toll-free-report": "to report for free",
+                "features-title": "Main Tins Wey E Get",
+                "features-subtitle": "Oluora dey give strong tools to connect citizens wit government agencies well well",
+                "feature-multilingual-title": "Plenty Language Interface",
+                "feature-multilingual-desc": "Use di platform for English, Igbo, or Pidgin so dat everybody fit join",
+                "feature-secure-title": "Safe Evidence-Based Reporting",
+                "feature-secure-desc": "Send foto, video, or voice note to report serious mata witout name and full privacy protection.",
+                "feature-social-title": "Social Media Join",
+                "feature-social-desc": "Send reports or project ideas tru DM for our social media accounts, or stay sharp wit live updates from X about Abia State, im people, and government.",
+                "feature-geolocation-title": "Geolocation Support",
+                "feature-geolocation-desc": "Tag your location sharp sharp for correct reporting and quick response",
+                "feature-access-title": "Access for Everybody",
+                "feature-access-desc": "Free number dey for people wey no get plenty internet access",
+                "feature-analytics-title": "Analytics & Tracking",
+                "feature-analytics-desc": "Follow report status and check analytics on government response time",
+                "how-it-works-title": "How E Dey Work",
+                "how-it-works-subtitle": "Oluora dey make citizen-government talk simple and sharp",
+                "step-register-title": "Register",
+                "step-register-desc": "Open account or continue witout name",
+                "step-submit-title": "Send Report",
+                "step-submit-desc": "Explain your problem wit evidence to support am",
+                "step-ai-title": "AI Processing",
+                "step-ai-desc": "Our AI dey sort and send your report",
+                "step-government-title": "Government Check",
+                "step-government-desc": "Government go do wetin dem suppose do",
+                "step-track-title": "Follow Progress",
+                "step-track-desc": "Check status and give feedback",
+                "ai-features-title": "Our Sharp AI Solutions",
+                "ai-features-subtitle": "Our high-level AI systems dey make sure say dem process and handle all citizen reports well",
+                "ai-categorization-title": "AI-Powered Report Sorting",
+                "ai-categorization-desc1": "Our sharp system dey check and sort your reports sharp sharp, make dem reach di correct government department witout delay. Di AI dey find main issues, priority levels, and action wey dem need based on wetin you submit.",
+                "ai-categorization-desc2": "Dem dey send reports sharp sharp to one of 23 ministries like Health, Education, Transport, and more - e dey remove delay from bureaucracy and confusion about where to send your mata.",
+                "ai-spam-title": "Spam Filter & Report Check",
+                "ai-spam-desc1": "High-level AI filtering, join wit checking by trained people, dey make sure say only real reports reach government officials, dey stop system abuse while keeping communication open for all citizens.",
+                "ai-spam-desc2": "Our system wey dey check content, wey trained staff dey support, dey check evidence wey dem submit for realness, dey help prioritize serious mata wey need quick attention.",
+                "ai-trend-title": "Report Analysis & Trend Spotting",
+                "ai-trend-desc1": "Our AI dey check patterns for thousands of reports to find new trends and urgent community needs, dey make government fit respond quick before tings escalate.",
+                "ai-trend-desc2": "Sentiment analysis dey help measure how people dey feel about government services and response time, dey create accountability and clearness for governance.",
+                "testimonials-title": "Success Stories",
+                "testimonials-subtitle": "Hear from citizens and government officials wey don feel di impact of Oluora",
+                "testimonial-1": "Afta I report di bridge wey fall for our community tru Oluora, we get response witin 24 hours. Witin one week, dem don start to repair am. Di clearness and accountability wey dis platform dey give na real game-changer.",
+                "testimonial-1-author": "Community Leader, Umuahia",
+                "testimonial-2": "As ministry official, Oluora don change how we dey receive and process citizen reports. Di AI sorting dey make sure say we get important mata sharp sharp, and di evidence submission feature dey help us check situation well even before we send team to investigate.",
+                "testimonial-2-author": "Ministry of Health",
+                "testimonial-3": "I dey live abroad, I dey always feel cut off from local mata for my hometown. Oluora dey let me stay informed and contribute to community development even from thousands of miles away. Di platform im plenty language support dey make am easy for everybody.",
+                "testimonial-3-author": "Diaspora Community Member",
+                "cta-title": "You Ready to Make Your Voice Count?",
+                "cta-subtitle": "Join thousands of citizens wey dey make difference for dia communities tru Oluora. Download di app or sign up for early access.",
+                "cta-google": "Google Play",
+                "cta-apple": "App Store",
+                "cta-email-placeholder": "Put your email for early access",
+                "cta-button": "Get Access",
+                "footer-description": "Dey join di gap between citizens and government wit real-time, confam talk wey dey give power to both sides.",
+                "footer-quick-links": "Quick Links",
+                "footer-resources": "Resources",
+                "footer-contact-info": "Contact Info",
+                "footer-faq": "FAQ",
+                "footer-privacy": "Privacy Policy",
+                "footer-terms": "Terms of Service",
+                "footer-support": "Support Center",
+                "footer-blog": "Blog",
+                "footer-contact": "Contact Us",
+                "footer-address": "Abia State, Nigeria",
+                "footer-hours": "Mon - Fri: 9AM - 5PM",
+                "footer-copyright": "© 2025 Oluora. All rights reserved."
+            }
+        };
+
+        // Language Switching Function
+        function changeLanguage(lang) {
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'igbo' ? 'ig' : lang === 'pidgin' ? 'en' : 'en';
+
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update placeholder attributes
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+
+            // Update page title
+            const titleElement = document.querySelector('title[data-translate]');
+            if (titleElement && translations[lang] && translations[lang]['title']) {
+                document.title = translations[lang]['title'];
+            }
+
+            // Store selected language in localStorage
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Load saved language or default to English
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'english';
+            document.querySelector('.language-dropdown').value = savedLang;
+            changeLanguage(savedLang);
+        });
+
         // Mobile Menu Toggle
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
@@ -1115,7 +1360,7 @@
         // Ticker Duplication for Seamless Loop
         const ticker = document.getElementById('ticker');
         const tickerContent = ticker.innerHTML;
-        ticker.innerHTML = tickerContent + tickerContent; // Duplicate content for continuous scrolling
+        ticker.innerHTML = tickerContent + tickerContent;
 
         // Testimonial Slider
         let slideIndex = 1;
@@ -1149,13 +1394,6 @@
             slideIndex++;
             showSlides(slideIndex);
         }, 15000);
-
-        // Language Selection
-        function changeLanguage(lang) {
-            // Placeholder function for language switching
-            alert(`Language switched to ${lang}`);
-            // Implement actual language switching logic here
-        }
 
         // Smooth Scroll for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
