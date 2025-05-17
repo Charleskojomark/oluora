@@ -192,23 +192,22 @@
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 5px;
             border: 1px solid var(--gold);
-            max-width: 500px;
-            margin-right: auto;
+            max-width: 400px; /* Reduced width */
+            padding: 15px 20px;
             margin-left: auto;
+            margin-right: auto;
         }
 
         .toll-free p {
-            
             font-size: 16px;
             color: var(--oxblood);
             font-weight: 500;
             text-align: center;
+            flex: 1;
         }
 
-        .toll-free h1 {
-            font-size: 24px;
+        .toll-free p:nth-child(2) {
             color: var(--gold);
-            font-weight: 700;
         }
 
         /* Hero Section */
@@ -219,7 +218,6 @@
             align-items: center;
             color: white;
             text-align: center;
-            /* margin-top: 30px; */
         }
 
         .hero-content {
@@ -700,10 +698,7 @@
             .toll-free {
                 flex-wrap: wrap;
                 padding: 8px 15px;
-            }
-
-            .toll-free h1 {
-                font-size: 20px;
+                max-width: 300px; /* Adjusted for smaller screens */
             }
 
             .toll-free p {
@@ -754,8 +749,8 @@
                 padding: 0 15px;
             }
 
-            .toll-free h1 {
-                font-size: 18px;
+            .toll-free {
+                max-width: 250px; /* Further reduced for very small screens */
             }
 
             .toll-free p {
